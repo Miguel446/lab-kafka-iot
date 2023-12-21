@@ -24,7 +24,7 @@ public class SensorStarterService {
                 humidityService);
 
         for (int i = 0; i < numRequest; i++) {
-            map.get(sensor).send(sensor.getRandomValues());
+            map.get(sensor).send();
         }
     }
 

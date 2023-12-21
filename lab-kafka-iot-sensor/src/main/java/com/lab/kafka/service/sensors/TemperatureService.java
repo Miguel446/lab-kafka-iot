@@ -2,6 +2,7 @@ package com.lab.kafka.service.sensors;
 
 import com.lab.kafka.client.TemperatureClient;
 
+import com.lab.kafka.enums.SensorEnum;
 import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,12 +22,15 @@ public class TemperatureService implements SensorInterface {
     }
 
     @Async
-    public void send(BigDecimal temperature) {
+    public void send() {
+        BigDecimal temperature = SensorEnum.TEMPERATURE.getRandomValue();
+
         // converting from kelvin to celsius
         BigDecimal temperatureInCelsius = temperature.subtract(BigDecimal.valueOf(273));
 
+        log.info(temperatureInCelsius.toString());
         try {
-            this.client.send(temperatureInCelsius);
+            this.client.send(temperature);
         } catch (FeignException e) {
             log.error("Error while sending temperature data", e);
         }

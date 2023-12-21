@@ -7,19 +7,21 @@ import java.util.Random;
 public enum SensorEnum {
 
     TEMPERATURE {
+        Random rand = new SecureRandom();
+
         @Override
-        public BigDecimal getRandomValues() {
-            Random rand = new SecureRandom();
+        public BigDecimal getRandomValue() {
             return BigDecimal.valueOf(rand.nextInt(274));
         }
     },
     HUMIDITY {
+        Random rand = new SecureRandom();
+
         @Override
-        public BigDecimal getRandomValues() {
-            Random rand = new SecureRandom();
+        public BigDecimal getRandomValue() {
             return BigDecimal.valueOf(rand.nextInt(501));
         }
     };
 
-    public abstract BigDecimal getRandomValues();
+    public abstract BigDecimal getRandomValue();
 }

@@ -2,6 +2,7 @@ package com.lab.kafka.service.sensors;
 
 import com.lab.kafka.client.HumidityClient;
 
+import com.lab.kafka.enums.SensorEnum;
 import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 
@@ -9,6 +10,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 @Slf4j
 @Service
@@ -21,10 +23,13 @@ public class HumidityService implements SensorInterface {
     }
 
     @Async
-    public void send(BigDecimal value) {
-        // max possible value is 500
-        BigDecimal humidityPercentage = value.multiply(BigDecimal.valueOf(100)).divide(BigDecimal.valueOf(500));
+    public void send() {
+        BigDecimal humidity = SensorEnum.HUMIDITY.getRandomValue();
 
+        // max possible value is 500
+        BigDecimal humidityPercentage = humidity.multiply(BigDecimal.valueOf(100)).divide(BigDecimal.valueOf(500),
+                RoundingMode.HALF_EVEN);
+        log.info(humidityPercentage.toString());
         try {
             this.client.send(humidityPercentage);
         } catch (FeignException e) {
