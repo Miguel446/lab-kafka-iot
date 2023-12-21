@@ -28,9 +28,9 @@ public class TemperatureService implements SensorInterface {
         // converting from kelvin to celsius
         BigDecimal temperatureInCelsius = temperature.subtract(BigDecimal.valueOf(273));
 
-        log.info(temperatureInCelsius.toString());
         try {
-            this.client.send(temperature);
+            this.client.send(temperatureInCelsius);
+            log.info(temperatureInCelsius.toString().concat("ºC"));
         } catch (FeignException e) {
             log.error("Error while sending temperature data", e);
         }

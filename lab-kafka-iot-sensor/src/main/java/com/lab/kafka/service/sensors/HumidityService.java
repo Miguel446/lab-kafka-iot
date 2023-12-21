@@ -29,9 +29,9 @@ public class HumidityService implements SensorInterface {
         // max possible value is 500
         BigDecimal humidityPercentage = humidity.multiply(BigDecimal.valueOf(100)).divide(BigDecimal.valueOf(500),
                 RoundingMode.HALF_EVEN);
-        log.info(humidityPercentage.toString());
         try {
             this.client.send(humidityPercentage);
+            log.info(humidityPercentage.toString().concat("%"));
         } catch (FeignException e) {
             log.error("Error while sending humidity data", e);
         }
