@@ -1,0 +1,14 @@
+{
+    "properties": [
+        {
+            "name": "lab-kafka-iot.temperature-producer",
+            "type": "java.lang.String",
+            "description": "URL of microservice lab-kafka-iot-temperature-producer"
+        },
+        {
+            "name": "lab-kafka-iot.humidity-producer",
+            "type": "java.lang.String",
+            "description": "URL of microservice lab-kafka-iot-humidity-producer"
+        }
+    ]
+}
