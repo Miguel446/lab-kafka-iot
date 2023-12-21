@@ -30,7 +30,7 @@ public class TemperatureService implements SensorInterface {
 
         try {
             this.client.send(temperatureInCelsius);
-            log.info(temperatureInCelsius.toString().concat("ºC"));
+            log.info(temperatureInCelsius.toString().concat("C"));
         } catch (FeignException e) {
             log.error("Error while sending temperature data", e);
         }
