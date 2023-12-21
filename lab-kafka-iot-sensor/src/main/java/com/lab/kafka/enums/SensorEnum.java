@@ -11,7 +11,7 @@ public enum SensorEnum {
 
         @Override
         public BigDecimal getRandomValue() {
-            return BigDecimal.valueOf(rand.nextInt(274));
+            return BigDecimal.valueOf(rand.nextInt(374));
         }
     },
     HUMIDITY {
