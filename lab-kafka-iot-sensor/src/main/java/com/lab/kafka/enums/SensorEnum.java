@@ -1,20 +1,23 @@
 package com.lab.kafka.enums;
 
 import java.math.BigDecimal;
+import java.security.SecureRandom;
+import java.util.Random;
 
 public enum SensorEnum {
 
-    // add random value generator
-
-    TEMPERATURE{
-        @Override
-        public BigDecimal getRandomValues(){
-            return BigDecimal.valueOf(1);
-        }
-    }, HUMIDITY {
+    TEMPERATURE {
         @Override
         public BigDecimal getRandomValues() {
-            return BigDecimal.valueOf(2);
+            Random rand = new SecureRandom();
+            return BigDecimal.valueOf(rand.nextInt(274));
+        }
+    },
+    HUMIDITY {
+        @Override
+        public BigDecimal getRandomValues() {
+            Random rand = new SecureRandom();
+            return BigDecimal.valueOf(rand.nextInt(501));
         }
     };
 

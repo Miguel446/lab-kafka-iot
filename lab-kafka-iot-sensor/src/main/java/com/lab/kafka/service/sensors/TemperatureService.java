@@ -1,6 +1,8 @@
 package com.lab.kafka.service.sensors;
 
 import com.lab.kafka.client.TemperatureClient;
+
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -14,9 +16,9 @@ public class TemperatureService implements SensorInterface {
         this.client = client;
     }
 
-    // async
+    @Async
     public void send(BigDecimal value) {
-        // convert from celsius to kelvin
+        // convert from kelvin to celsius
         this.client.send(value);
     }
 
