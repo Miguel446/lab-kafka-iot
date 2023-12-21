@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.math.BigDecimal;
 
-@FeignClient(url = "http://localhost:8081", name = "temperature-client")
+@FeignClient(url = "${lab-kafka-iot.temperature-producer}", name = "temperature-client")
 public interface TemperatureClient {
 
     @PostMapping("/v1/api/temperatures")
