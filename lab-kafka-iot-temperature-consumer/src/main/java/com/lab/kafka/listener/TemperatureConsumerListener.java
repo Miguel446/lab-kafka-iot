@@ -10,7 +10,7 @@ public class TemperatureConsumerListener {
 
 	@KafkaListener(groupId = "temperature-group", topics = "temperature-topic", containerFactory = "validMessageContainerFactory")
 	public void processTemperature(String temperature) {
-		log.info("Temperature: {}", temperature);
+		log.info("Process Temperature: {}", temperature);
 	}
 
 }
