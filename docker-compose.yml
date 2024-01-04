@@ -30,6 +30,22 @@ services:
     tty: true
     networks:
       - kafka
+  humidity-producer:
+    container_name: humidity-producer
+    depends_on:
+      - broker-1
+      - broker-2
+      - broker-3
+    build: ./lab-kafka-iot-humidity-producer
+    restart: on-failure
+    ports:
+      - 8082:8082
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+    networks:
+      - kafka
 
   zookeeper:
     image: confluentinc/cp-zookeeper:${CONFLUENT_PLATFORM_VERSION:-7.4.0}
