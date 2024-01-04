@@ -2,5 +2,5 @@ server:
   port: 8080
 
 lab-kafka-iot:
-  temperature-producer: http://localhost:8081
-  humidity-producer: http://localhost:8082
+  temperature-producer: http://temperature-producer:8081
+  humidity-producer: http://humidity-producer:8082
