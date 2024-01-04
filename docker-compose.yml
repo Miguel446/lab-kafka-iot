@@ -46,6 +46,22 @@ services:
     tty: true
     networks:
       - kafka
+  temperature-consumer:
+    container_name: temperature-consumer
+    depends_on:
+      - broker-1
+      - broker-2
+      - broker-3
+    build: ./lab-kafka-iot-temperature-consumer
+    restart: on-failure
+    ports:
+      - 8083:8083
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+    networks:
+      - kafka
 
   zookeeper:
     image: confluentinc/cp-zookeeper:${CONFLUENT_PLATFORM_VERSION:-7.4.0}
