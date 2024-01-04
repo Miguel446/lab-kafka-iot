@@ -1,0 +1,8 @@
+spring:
+  threads:
+    virtual:
+      enabled: true
+  kafka:
+    bootstrap-servers: broker-1:29091,broker-2:29092,broker-3:29093
+server:
+  port: 8083
