@@ -10,6 +10,6 @@ public class KafkaConfig {
 
     @Bean
     KafkaAdmin.NewTopics topics() {
-        return new KafkaAdmin.NewTopics(TopicBuilder.name("temperature-topic").partitions(1).replicas(1).build());
+        return new KafkaAdmin.NewTopics(TopicBuilder.name("temperature-topic").partitions(4).replicas(3).build());
     }
 }

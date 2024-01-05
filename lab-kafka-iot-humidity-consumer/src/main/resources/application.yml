@@ -1,0 +1,12 @@
+spring:
+  threads:
+    virtual:
+      enabled: true
+  kafka:
+    consumer:
+      bootstrap-servers: broker-1:29091,broker-2:29092,broker-3:29093
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+server:
+  port: 8084

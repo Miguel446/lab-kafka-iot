@@ -62,6 +62,22 @@ services:
     tty: true
     networks:
       - kafka
+  humidity-consumer:
+    container_name: humidity-consumer
+    depends_on:
+      - broker-1
+      - broker-2
+      - broker-3
+    build: ./lab-kafka-iot-humidity-consumer
+    restart: on-failure
+    ports:
+      - 8084:8084
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+    networks:
+      - kafka
 
   zookeeper:
     image: confluentinc/cp-zookeeper:${CONFLUENT_PLATFORM_VERSION:-7.4.0}
