@@ -1,5 +1,7 @@
 package com.lab.kafka.service;
 
+import java.util.UUID;
+
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -15,13 +17,16 @@ public class TemperatureService {
 
     public void sendTemperature(String temperature) {
         log.info("Sending temperature to Kafka");
-        kafkaTemplate.send("temperature-topic", temperature).whenComplete((result, ex) -> {
-            if (ex == null) {
-                log.info("Temperature: {}", temperature);
-                log.info("Partition: {}", result.getRecordMetadata().partition());
-            } else {
-                log.error("Error while sending temperature", ex);
-            }
-        });
+
+        // uuid as key for testing purposes only
+        kafkaTemplate.send("temperature-topic", UUID.randomUUID().toString(), temperature)
+                .whenComplete((result, ex) -> {
+                    if (ex == null) {
+                        log.info("Temperature: {}", temperature);
+                        log.info("Partition: {}", result.getRecordMetadata().partition());
+                    } else {
+                        log.error("Error while sending temperature", ex);
+                    }
+                });
     }
 }
