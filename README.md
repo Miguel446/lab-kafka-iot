@@ -1,6 +1,4 @@
 <a name="readme-top"></a>
-
-<br />
 <div align="center">
 <h3 align="center">lab-kafka-iot</h3>
 
@@ -13,7 +11,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](/Microservices Architecture.png)
+![Model](https://github.com/Miguel446/lab-kafka-iot/blob/main/Microservices%20Architecture.png)
 
 
 
