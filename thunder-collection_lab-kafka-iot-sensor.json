@@ -1,0 +1,49 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "lab-kafka-iot-sensor",
+    "dateExported": "2024-01-13T02:27:37.166Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "d42c8f3a-8bcb-4e21-8e4b-6177b81065f9",
+            "colId": "40ce344c-9314-47b9-8d12-d3114ecc86eb",
+            "containerId": "",
+            "name": "Start Temperature Sensor",
+            "url": "http://localhost:8000/v1/api/temperature?numRequests=10",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-12-21T21:14:48.992Z",
+            "modified": "2024-01-13T00:27:46.914Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "numRequests",
+                    "value": "10",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "8330a976-25c6-4445-b4e0-542b3036d874",
+            "colId": "40ce344c-9314-47b9-8d12-d3114ecc86eb",
+            "containerId": "",
+            "name": "Start Humidity Sensor",
+            "url": "http://localhost:8000/v1/api/humidity?numRequests=10",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-12-21T22:21:47.700Z",
+            "modified": "2024-01-04T21:57:03.684Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "numRequests",
+                    "value": "10",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}
