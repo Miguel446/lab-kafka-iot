@@ -4,6 +4,7 @@
 
   <p align="center">
     A project to simulate an IOT Application using Kafka and Java + Spring
+    * For testing purposes only, not recommended for production enviroment
   </p>
 </div>
 
@@ -12,7 +13,6 @@
 ## About The Project
 
 ![Model](https://github.com/Miguel446/lab-kafka-iot/blob/main/Microservices%20Architecture.png)
-
 
 
 ### Built With
