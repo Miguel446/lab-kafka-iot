@@ -4,6 +4,7 @@
 
   <p align="center">
     A project to simulate an IOT Application using Kafka and Java + Spring
+    The idea is to learn Kafka fundamentals and some new Java features, such as Virtual Threads, in a single project that gets improved over time instead of creating multiple small projects.
     * For testing purposes only, not recommended for production enviroment
   </p>
 </div>
@@ -39,7 +40,7 @@
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use the Thunderclient Collection to make some requests. You can make multiple requests at a time using the `lab-kafka-iot-sensor` collection
+Use the Thunderclient Collection to make some requests. You can make multiple requests at a time using the `thunder-collection_lab-kafka-iot-sensor.json` collection
 
 <!-- CONTACT -->
 ## Contact
