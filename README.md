@@ -19,6 +19,7 @@
 
 ![Model](https://github.com/Miguel446/lab-kafka-iot/blob/main/Microservices%20Architecture.png)
 
+<sup><sub>* Projects with the prefix 'lab' are developed with the aim of being an environment to experiment and learn new technologies in practice</sub></sup>
 
 ### Built With
 
