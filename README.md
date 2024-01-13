@@ -3,9 +3,13 @@
 <h3 align="center">lab-kafka-iot</h3>
 
   <p align="center">
-    A project to simulate an IOT Application using Kafka and Java + Spring
+    A project to simulate an IOT Application using Kafka and Java + Spring.
+  </p>
+  <p align="center">
     The idea is to learn Kafka fundamentals and some new Java features, such as Virtual Threads, in a single project that gets improved over time instead of creating multiple small projects.
-    * For testing purposes only, not recommended for production enviroment
+  </p>
+  <p align="center">
+    * For testing purposes only, not recommended for production enviroment.
   </p>
 </div>
 
