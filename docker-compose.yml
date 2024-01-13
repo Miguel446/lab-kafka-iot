@@ -78,6 +78,18 @@ services:
     tty: true
     networks:
       - kafka
+  device:
+    container_name: device
+    build: ./lab-kafka-iot-device
+    restart: on-failure
+    ports:
+      - 8085:8085
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+    networks:
+      - kafka
 
   zookeeper:
     image: confluentinc/cp-zookeeper:${CONFLUENT_PLATFORM_VERSION:-7.4.0}
